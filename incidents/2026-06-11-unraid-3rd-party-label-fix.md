@@ -21,6 +21,8 @@ Unraid's DockerClient.php getAllInfo() method checks for a Docker container labe
 
 Containers created or recreated outside the Unraid UI (via docker run, docker-compose, or migration scripts) do not have this label injected automatically — only containers created through the Unraid Docker UI or the CreateDocker.php mechanism receive it.
 
+Note: Editing /var/lib/docker/containers/<id>/config.v2.json directly does NOT work — Docker holds config in memory and overwrites the file on docker start. The container must be recreated with the label in the docker run command.
+
 ## Resolution
 For each affected container:
 1. docker stop <container>
@@ -29,5 +31,19 @@ For each affected container:
 `--label net.unraid.docker.managed=dockerman`
 
 ## Prevention
-- Standardize container creation scripts to include Unraid-specific metadata labels.
-- Verify container "Managed" status in Unraid UI as a post-migration verification step.
+Any container created or recreated outside the Unraid UI must include the ownership label.
+This applies to:
+- Manual docker run commands
+- Rebuild scripts (e.g. honcho rebuild.sh — intentionally excluded)
+- Migration scripts
+- Any automation that creates containers programmatically
+
+## Checklist for Future Container Recreations
+- [ ] Include --label net.unraid.docker.managed=dockerman in docker run
+- [ ] Primary network matches XML <Network> field
+- [ ] Run network-reattach script after recreation to restore secondary networks
+- [ ] Verify label: docker inspect <name> | grep docker.managed
+
+## Related
+- Part of the June 11 2026 Docker network segmentation migration
+- Affects Unraid 7.3.1 — likely applies to all Unraid versions using the dynamix.docker.manager plugin
