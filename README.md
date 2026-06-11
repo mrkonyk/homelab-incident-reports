@@ -26,7 +26,7 @@ Each report includes:
 | Date | Severity | Title | Status |
 |------|----------|-------|--------|
 | 2026-06-11 | Critical | Nextcloud 500 — Hardcoded DB Host After Container Recreation | Resolved |
-| 2026-06-11 | Warning | Containers Showing "3rd Party" After Network Segmentation | Resolved |
+| 2026-06-11 | Warning | Containers Showing 3rd Party After Network Migration | Resolved |
 | 2026-06-11 | Critical | Full Stack Credential Rotation After Audit | Resolved |
 | 2026-06-11 | Critical | Docker Network Segmentation — 3-Phase Migration | Resolved |
 
