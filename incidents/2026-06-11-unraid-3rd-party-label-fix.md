@@ -1,0 +1,33 @@
+# Incident: Containers Showing "3rd Party" After Network Segmentation Migration
+
+Date: 2026-06-11  
+Duration: ~2 hours investigation  
+Severity: Warning  
+Status: Resolved  
+
+## Summary
+After a 3-phase Docker network segmentation migration, 13 containers began showing as "3rd Party" in the Unraid UI despite having correct XML templates. Root cause was an undocumented Unraid ownership label missing from containers that were created or recreated outside the Unraid UI.
+
+## Timeline
+- 09:00 — Network segmentation migration complete (frontend network emptied)
+- 09:30 — Unraid Docker tab shows 13 containers as "3rd Party"
+- 10:00 — XML templates verified correct, Docker daemon restarted — no change
+- 10:30 — Unraid PHP source (DockerClient.php) inspected to find root cause
+- 10:45 — Root cause identified: missing net.unraid.docker.managed label
+- 11:00 — All 7 affected containers relabeled and confirmed managed
+
+## Root Cause
+Unraid's DockerClient.php getAllInfo() method checks for a Docker container label net.unraid.docker.managed=dockerman before consulting any XML template. If the label is absent, Unraid sets template = null and displays "3rd Party" regardless of whether a valid XML template exists on disk.
+
+Containers created or recreated outside the Unraid UI (via docker run, docker-compose, or migration scripts) do not have this label injected automatically — only containers created through the Unraid Docker UI or the CreateDocker.php mechanism receive it.
+
+## Resolution
+For each affected container:
+1. docker stop <container>
+2. docker rm <container>  
+3. Recreate with the ownership label added:
+`--label net.unraid.docker.managed=dockerman`
+
+## Prevention
+- Standardize container creation scripts to include Unraid-specific metadata labels.
+- Verify container "Managed" status in Unraid UI as a post-migration verification step.
