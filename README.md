@@ -29,6 +29,7 @@ Each report includes:
 | 2026-06-11 | Warning | Containers Showing 3rd Party After Network Migration | Resolved |
 | 2026-06-11 | Critical | Full Stack Credential Rotation After Audit | Resolved |
 | 2026-06-11 | Critical | Docker Network Segmentation — 3-Phase Migration | Resolved |
+| 2026-06-26 | Critical | CrowdSec LAPI Key Exposure — Detection, Rotation, and Incomplete-Purge Discovery | Resolved |
 
 ## Methodology
 Infrastructure is treated as code. Changes are documented, tested, and reviewed before application. AI-assisted tooling (Hermes + Claude Code) is used for complex multi-system operations with human approval at each step.
