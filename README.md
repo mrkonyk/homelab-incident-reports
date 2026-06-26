@@ -25,11 +25,22 @@ Each report includes:
 ## Reports Index
 | Date | Severity | Title | Status |
 |------|----------|-------|--------|
+| 2026-06-06 | High | Rogue Container via Autonomous Docker Socket Access | Resolved |
+| 2026-06-10 | Medium | XPS 13 Boot Failure — Broken initramfs After Kernel Update | Resolved |
+| 2026-06-11 | High | CrowdSec Silent No-Op + Unauthenticated LAN Service Exposure | Resolved |
 | 2026-06-11 | Critical | Nextcloud 500 — Hardcoded DB Host After Container Recreation | Resolved |
-| 2026-06-11 | Warning | Containers Showing 3rd Party After Network Migration | Resolved |
-| 2026-06-11 | Critical | Full Stack Credential Rotation After Audit | Resolved |
-| 2026-06-11 | Critical | Docker Network Segmentation — 3-Phase Migration | Resolved |
-| 2026-06-26 | Critical | CrowdSec LAPI Key Exposure — Detection, Rotation, and Incomplete-Purge Discovery | Resolved |
+| 2026-06-11 | Warning | Containers Showing "3rd Party" After Network Segmentation Migration | Resolved |
+| 2026-06-16 | P3 Low | Proactive Docker Audit — Stale Network References and Orphaned Templates | Resolved |
+| 2026-06-17 | P2 Medium | Backup Strategy Hardening: Skip List Audit, Beszel WAL Fix, and First Restore Test | Resolved |
+| 2026-06-19 | P2 Medium | GitOps Foundation: Webhook Limitation, Silent Polling Failure, and Observability Stack Hardening | Resolved |
+| 2026-06-20 | P1 High | Icon Label Change Surfaces Three Latent Infrastructure Gaps | Resolved |
+| 2026-06-20 | P2 Medium | Appdata Backup Plugin Cannot Resolve Bind-Backed Named Docker Volumes | Resolved |
+| 2026-06-20 | P2 Medium | Komodo Silently Dropped a Queued Deploy After Periphery Restart | Resolved |
+| 2026-06-20 | P2 Medium | Nextcloud Database Connectivity Loss — Dropped Secondary Network + Stale PHP-FPM DNS Cache | Resolved |
+| 2026-06-21 | P1 High | Multi-System Failures During Routine Maintenance | Resolved |
+| 2026-06-23 | P2 Medium | GitHub PAT Rotation Script: Believed-Staged Rollout Was Actually a Single Unscoped Write Across 24 Stacks | Resolved |
+| 2026-06-26 | P0 Critical | CrowdSec LAPI Key Exposure — Detection, Rotation, and Incomplete-Purge Discovery | Resolved |
+| 2026-06-26 | Hardening | External Heartbeat Monitoring: Dead-Man's-Switch Coverage for Three Single Points of Failure | Complete |
 
 ## Methodology
 Infrastructure is treated as code. Changes are documented, tested, and reviewed before application. AI-assisted tooling (Hermes + Claude Code) is used for complex multi-system operations with human approval at each step.
