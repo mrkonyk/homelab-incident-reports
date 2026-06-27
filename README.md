@@ -40,6 +40,7 @@ Each report includes:
 | 2026-06-21 | P1 High | Multi-System Failures During Routine Maintenance | Resolved |
 | 2026-06-23 | P2 Medium | GitHub PAT Rotation Script: Believed-Staged Rollout Was Actually a Single Unscoped Write Across 24 Stacks | Resolved |
 | 2026-06-26 | P0 Critical | CrowdSec LAPI Key Exposure — Detection, Rotation, and Incomplete-Purge Discovery | Resolved |
+| 2026-06-26 | P1 High | Edge Auth Stack Remediation — Closing 17 Audit Findings and Three Independent Silent-Failure Discoveries | Resolved |
 | 2026-06-26 | Hardening | External Heartbeat Monitoring: Dead-Man's-Switch Coverage for Three Single Points of Failure | Complete |
 
 ## Methodology
