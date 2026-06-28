@@ -29,6 +29,8 @@ Each report includes:
 | 2026-06-10 | P2 Medium | XPS 13 Boot Failure — Broken initramfs After Kernel Update | Resolved |
 | 2026-06-11 | P1 High | CrowdSec Silent No-Op + Unauthenticated LAN Service Exposure | Resolved |
 | 2026-06-11 | P0 Critical | Nextcloud 500 — Hardcoded DB Host After Container Recreation | Resolved |
+| 2026-06-11 | P1 High | Full-Stack Credential Rotation Triggered by a Hardcoded-IP Outage | Resolved |
+| 2026-06-11 | P2 Medium | Docker Network Segmentation — Three-Phase Zero-Downtime Migration | Resolved |
 | 2026-06-11 | P3 Low | Containers Showing "3rd Party" After Network Segmentation Migration | Resolved |
 | 2026-06-16 | P3 Low | Proactive Docker Audit — Stale Network References and Orphaned Templates | Resolved |
 | 2026-06-17 | P2 Medium | Backup Strategy Hardening: Skip List Audit, Beszel WAL Fix, and First Restore Test | Resolved |
