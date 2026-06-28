@@ -2,7 +2,7 @@
 
 Date: 2026-06-11  
 Duration: ~2 hours (undetected overnight)  
-Severity: Critical  
+**Severity:** P0 Critical  
 Status: Resolved  
 
 ## Summary

@@ -1,7 +1,7 @@
 # GitOps Foundation: Webhook Limitation, Silent Polling Failure, and Observability Stack Hardening
 
 Date: 2026-06-19
-Severity: P2 Medium
+**Severity:** P2 Medium
 Status: Resolved
 Affected: Komodo Core/Periphery, homelab-infra reconciliation loop, observability stack (Prometheus, cAdvisor, Uptime Kuma scrape target)
 Duration: Single session

@@ -3,7 +3,7 @@
 # Incident Report: Rogue Container via Autonomous Docker Socket Access
 
 Date: 2026-06-06
-Severity: High
+**Severity:** P1 High
 Status: Resolved
 System: KONYKS-SERVER (Unraid 7.3.1)
 

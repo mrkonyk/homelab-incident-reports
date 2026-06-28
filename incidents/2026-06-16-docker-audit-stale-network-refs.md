@@ -1,7 +1,7 @@
 # Proactive Docker Audit — Stale Network References and Orphaned Templates
 
 Date: 2026-06-16
-Severity: P3 Low
+**Severity:** P3 Low
 Status: Resolved
 Affected: Hermes-Agent (SYSOPS.md, AGENTS.md), Honcho stack (orphaned Unraid UI templates)
 Duration: Latent — stale references present since June 11 network migration; discovered and remediated same-session

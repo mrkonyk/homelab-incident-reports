@@ -1,7 +1,7 @@
 # Icon Label Change Surfaces Three Latent Infrastructure Gaps
 
 Date: 2026-06-19 to 2026-06-20
-Severity: P1 High
+**Severity:** P1 High
 Status: Resolved
 Affected: Komodo (Core, Periphery, Mongo), SWAG, Authelia, all SWAG-proxied services
 Duration: ~14 hours across two sessions (intermittent, not continuous outage)

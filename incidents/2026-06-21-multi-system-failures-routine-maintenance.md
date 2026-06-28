@@ -1,7 +1,7 @@
 # Multi-System Failures During Routine Maintenance
 
 Date: 2026-06-21
-Severity: P1 High
+**Severity:** P1 High
 Status: Resolved
 Affected: Unraid-MCP, Hermes-Agent (Telegram gateway), GitHub integration (PAT revocation), Komodo Periphery alerting
 Duration: ~4 hours (single session)

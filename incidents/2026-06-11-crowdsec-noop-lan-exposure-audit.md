@@ -3,7 +3,7 @@
 # Incident Report: CrowdSec Silent No-Op + Unauthenticated LAN Service Exposure
 
 Date: 2026-06-11
-Severity: High
+**Severity:** P1 High
 Status: Resolved
 System: KONYKS-SERVER (Unraid 7.3.1)
 

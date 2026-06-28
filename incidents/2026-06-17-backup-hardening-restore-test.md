@@ -9,6 +9,8 @@ summary: >
   A review of the Appdata Backup plugin configuration revealed two skip-list errors and an unresolved WAL file risk for the Beszel monitoring container. The beszel hub was being stopped and backed up directly while running, producing potentially dirty SQLite WAL snapshots. The unmanic container was being included despite having no appdata to back up, generating log noise that could mask real failures. Both issues were resolved: a User Script was created to perform a clean stop/copy/start backup of Beszel's database files before the Saturday AB job runs, and unmanic was added to the skip list. The session also completed the first-ever end-to-end restore test against the June 13 backup set, successfully restoring the Wallos container from archive. A 1.1GB bloat in the boot flash backup was identified and resolved by removing the /boot/previous rollback directory left over from the Unraid 7.3.1 upgrade.
 ---
 
+**Severity:** P2 Medium
+
 ## Timeline
 
 | Time | Event |

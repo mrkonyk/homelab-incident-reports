@@ -1,7 +1,7 @@
 ---
 title: "External Heartbeat Monitoring: Dead-Man's-Switch Coverage for Three Single Points of Failure"
 date: "2026-06-26"
-severity: "Hardening"
+severity: "P2 Medium"
 status: "Complete"
 affected:
   - "KONYKS-SERVER (heartbeat + Alertmanager path test)"
@@ -20,6 +20,8 @@ summary: >
   requires a human to confirm Telegram delivery before the check is marked green. All four confirmed
   live at session close. Doctrine documented in both SYSOPS.md copies (repo + Hermes, v0.2).
 ---
+
+**Severity:** P2 Medium
 
 ## Timeline
 

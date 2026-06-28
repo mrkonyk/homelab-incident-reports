@@ -3,7 +3,7 @@
 # Incident Report: XPS 13 Boot Failure — Broken initramfs After Kernel Update
 
 Date: 2026-06-10
-Severity: Medium
+**Severity:** P2 Medium
 Status: Resolved
 System: Dell XPS 13 9310 "Edith" — Zorin OS 18.1 Pro, LUKS full-disk encryption
 

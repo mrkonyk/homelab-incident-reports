@@ -2,7 +2,7 @@
 
 Date: 2026-06-11  
 Duration: ~2 hours investigation  
-Severity: Warning  
+**Severity:** P3 Low  
 Status: Resolved  
 
 ## Summary
