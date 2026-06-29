@@ -127,3 +127,31 @@ Added to `homelab-infra/SYSOPS.md`:
 ---
 
 *Environment: KONYKS-SERVER (Unraid) · GitOps deployment engine (Core + Periphery) · Loki/Prometheus/Grafana/Alertmanager observability stack · homelab-incident-reports*
+
+---
+
+## Addendum — 2026-06-29
+
+A June 29 session found that `webhook_base_url` has been empty in Komodo's CoreConfig since v2
+migration (2026-06-23), meaning GitHub push webhooks have never triggered deploys in v2. This was
+initially framed as potentially contradicting the June 20 incident ("there was never a queue to
+drop from"). It does not contradict it.
+
+**Why there is no conflict:** On June 20, Komodo was v1.16.12. In v1.16.12, the webhook HTTP
+endpoint does not exist — POST requests return 405. The auto-deploy mechanism that was active
+on June 20 was Periphery's internal git polling (5-minute cycle, `resource_poll_interval:
+FiveMinutes`), which operates entirely independently of GitHub webhooks. That polling is what
+detected the new commit and triggered the ComposePull that failed with
+`error: Stopped after repo pull failure`.
+
+**The June 29 `webhook_base_url` finding** is specific to v2.2.0's webhook-triggered deploy path:
+GitHub sends a push event to `{webhook_base_url}/github/webhook`, Komodo responds with an
+immediate `DeployStackIfChanged`. With `webhook_base_url = ""`, that path is unreachable — only
+polling fires deploys, with up to 5-minute latency. This was also true on June 20 (for a different
+reason: webhooks weren't implemented). The two findings describe the same effective behavior
+(polling-only) via two different constraints (architecture limit vs. missing config value).
+
+**No correction to this report's root cause is required.** The June 20 report already explicitly
+states "What the original failure was NOT: This was not a queued deploy being dropped when
+Periphery restarted." The actual root cause — a ComposePull that errored at the git-pull stage
+and was silently not retried — was correctly identified and documented.

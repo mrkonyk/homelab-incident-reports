@@ -134,3 +134,54 @@ wrong value.
 ---
 
 *Environment: KONYKS-SERVER (Unraid) · Redis (bitnami/redis) · Authelia · Immich · Honcho (honcho-api + honcho-deriver) · redis-py · homelab-incident-reports*
+
+---
+
+## Addendum — same session, follow-up findings
+
+### 1. storage_encryption_key Infisical desync — resolved
+
+The `storage_encryption_key` PATCH to Infisical returned 403 immediately after the rotation. The
+identity (`rotate-script-readonly`) had both `member` and `viewer` roles assigned simultaneously.
+At retry time, the PATCH succeeded with HTTP 200 — no role change was required to achieve success.
+The original 403 appears to have been transient, not a persistent permission boundary. The identity
+was subsequently reverted to `viewer`-only (via Infisical UI — the service account lacks membership-
+management permissions itself). Infisical is now in sync with the local secrets file.
+
+### 2. Honcho outage — separate production incident
+
+The CACHE_URL colon-stripping (Incident 2 above) caused a live Redis authentication failure in
+the Honcho memory backend (honcho-api + honcho-deriver), which serves Hermes's long-term agent
+memory. Symptoms: container health checks returned 200 (HTTP layer healthy), but Redis AUTH was
+failing with WRONGPASS — Hermes's memory was silently unavailable. The failure was not surfaced by
+health checks; it was caught by a direct Redis PING test from inside the honcho container and a
+cache round-trip verification (write key → read key → confirm match). Total duration of memory
+backend unavailability: approximately 20 minutes.
+
+The fix (Node.js `new URL(url).password` extraction, which correctly strips the colon prefix)
+was applied, honcho containers were recreated, and cache round-trip was confirmed PASS before
+the incident was called resolved.
+
+### 3. Fix applied to rotate-authelia-secret.sh
+
+The colon-stripping pattern (`s|redis://[^@]*@|...`) was not present in the rotation script
+itself — it appeared only in ad-hoc session code. The fix was applied to the script's shared-
+consumer ABORT message, which is the manual-rotation reference operators use when the script
+detects Redis consumers outside authelia/ and redis/. The correct pattern
+(`s|redis://:[^@]*@|redis://:<new>@|`) and a regression warning (Honcho outage 2026-06-29) are
+now documented there.
+
+Commit: `28bb858` in homelab-infra — "Fix: preserve colon prefix in redis_password rotation sed
+pattern (caused Honcho outage 2026-06-29)"
+
+### 4. June 20 deploy-queue-drop report — no correction required
+
+A June 29 finding that `webhook_base_url = ""` (GitHub webhooks never reach Komodo v2) was
+initially framed as potentially contradicting the June 20 incident. It does not. On June 20,
+Komodo was v1.16.12, which does not implement webhook endpoints at all (POST → 405). The
+ComposePull that failed on June 20 was triggered by Periphery's internal 5-minute git polling,
+which operates independently of GitHub webhooks in all Komodo versions. The June 29 finding
+describes a different (webhook) trigger path that was unavailable both then and now. The June 20
+report's root cause — ComposePull error, no retry — was correct. An addendum was added to the
+June 20 report (`2026-06-20-komodo-deploy-queue-drop.md`) clarifying the two findings are
+orthogonal.
