@@ -1,7 +1,7 @@
 # Credential Rotation Script Bugs — Three Compounding Failures Render do_push_rotation.sh Inoperable
 
 **Date:** 2026-06-29
-**Severity:** P2 Medium
+**Severity:** P1 High
 **Status:** Resolved
 **Affected:** do_push_rotation.sh, GitHub PAT rotation, git fetch verification step
 **Duration:** Script had been inoperable since its initial commit (2026-06-23); no successful end-to-end rotation had ever been performed using it

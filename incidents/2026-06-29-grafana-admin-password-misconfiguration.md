@@ -1,7 +1,7 @@
 # Grafana Admin Password Misconfiguration — Secret Mount Was a Directory, Password Reset on Every Restart
 
 **Date:** 2026-06-28 to 2026-06-29
-**Severity:** P2 Medium
+**Severity:** P1 High
 **Status:** Resolved
 **Affected:** obs-grafana (Grafana 13.0.2), GF_SECURITY_ADMIN_PASSWORD_FILE secret mount, fetch_grafana_secrets.sh
 **Duration:** Condition present since Grafana was migrated to secrets-managed configuration; exact onset not independently verified
