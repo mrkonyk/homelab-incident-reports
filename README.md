@@ -45,6 +45,16 @@ Each report includes:
 | 2026-06-26 | P1 High | Edge Auth Stack Remediation — Closing 17 Audit Findings and Three Independent Silent-Failure Discoveries | Resolved |
 | 2026-06-26 | P2 Medium | External Heartbeat Monitoring: Dead-Man's-Switch Coverage for Three Single Points of Failure | Complete |
 | 2026-06-27 | P2 Medium | Centralized Secrets Migration — Five Independent Verification Failures Caught Before Any Reached Production | Resolved |
+| 2026-06-29 | P1 High | Credential Rotation Script Bugs — Three Compounding Failures Render do_push_rotation.sh Inoperable | Resolved |
+| 2026-06-29 | P1 High | Ghost Cron Trigger Causes Silent Multi-Database Backup Outage | Resolved |
+| 2026-06-29 | P1 High | Grafana Admin Password Misconfiguration — Secret Mount Was a Directory, Password Reset on Every Restart | Resolved |
+| 2026-06-29 | P2 Medium | Hermes-Agent Cron Fleet Audit — Weekly IP Scan Running Clean While Primary Scan Mechanism Had Never Executed | Resolved |
+| 2026-06-29 | P2 Medium | Weekly IP Scan — Two Independent MCP Failure Classes Found in Same Script | Resolved |
+| 2026-06-29 | P1 High / P1 High / P2 Medium | Authelia Secrets Rotation — Three Incidents: Redis Credential Exposure, CACHE_URL Colon-Stripping, SHA256 Newline Artifact | Resolved |
+| 2026-07-02 | P0 Critical | Credential Exposure During Cron Audit and Remediation | Structurally Resolved |
+| 2026-07-02 | P1 High | Silent Monitoring Failure: Backup Verification Never Actually Checked Anything | Structurally Resolved |
+| 2026-07-03 | P2 Medium | KomodoDeployLag on observability/seerr — A PAT-Rotation Race, Not a Repeat of Prior Deploy-Drop Bugs | Resolved |
+| 2026-07-03 | P1 High | Silent MCP Toolset Misconfiguration Caused Weeks of Fabricated Monitoring Reports | Resolved |
 | 2026-07-04 | P1 High | Stale CLI Version, GitOps Near-Miss, and Cascading Credential Exposure | Resolved |
 
 ## Methodology
