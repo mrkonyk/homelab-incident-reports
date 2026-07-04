@@ -45,6 +45,7 @@ Each report includes:
 | 2026-06-26 | P1 High | Edge Auth Stack Remediation — Closing 17 Audit Findings and Three Independent Silent-Failure Discoveries | Resolved |
 | 2026-06-26 | P2 Medium | External Heartbeat Monitoring: Dead-Man's-Switch Coverage for Three Single Points of Failure | Complete |
 | 2026-06-27 | P2 Medium | Centralized Secrets Migration — Five Independent Verification Failures Caught Before Any Reached Production | Resolved |
+| 2026-07-04 | P1 High | Stale CLI Version, GitOps Near-Miss, and Cascading Credential Exposure | Resolved |
 
 ## Methodology
 Infrastructure is treated as code. Changes are documented, tested, and reviewed before application. AI-assisted tooling (Hermes + Claude Code) is used for complex multi-system operations with human approval at each step.
