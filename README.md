@@ -58,6 +58,7 @@ Each report includes:
 | 2026-07-04 | P1 High | Stale CLI Version, GitOps Near-Miss, and Cascading Credential Exposure | Resolved |
 | 2026-07-04 | P1 High | Webhook Chain Re-Verification, an Accidental Credential Exposure, and a Self-Caused Credential Path Divergence | Resolved |
 | 2026-07-05 | P3 Low | Strava MCP Health Check False Negative — Schema Validation Bug in Third-Party Package | Resolved |
+| 2026-07-05 | P1 High | credential_guard.sh Hardening, Round 2 — Two New Exposure Vectors Found and Closed | Resolved |
 
 ## Methodology
 Infrastructure is treated as code. Changes are documented, tested, and reviewed before application. AI-assisted tooling (Hermes + Claude Code) is used for complex multi-system operations with human approval at each step.
