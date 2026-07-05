@@ -56,6 +56,7 @@ Each report includes:
 | 2026-07-03 | P2 Medium | KomodoDeployLag on observability/seerr — A PAT-Rotation Race, Not a Repeat of Prior Deploy-Drop Bugs | Resolved |
 | 2026-07-03 | P1 High | Silent MCP Toolset Misconfiguration Caused Weeks of Fabricated Monitoring Reports | Resolved |
 | 2026-07-04 | P1 High | Stale CLI Version, GitOps Near-Miss, and Cascading Credential Exposure | Resolved |
+| 2026-07-04 | P1 High | Webhook Chain Re-Verification, an Accidental Credential Exposure, and a Self-Caused Credential Path Divergence | Resolved |
 
 ## Methodology
 Infrastructure is treated as code. Changes are documented, tested, and reviewed before application. AI-assisted tooling (Hermes + Claude Code) is used for complex multi-system operations with human approval at each step.
