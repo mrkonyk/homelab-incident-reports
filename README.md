@@ -60,6 +60,9 @@ Each report includes:
 | 2026-07-05 | P3 Low | Strava MCP Health Check False Negative — Schema Validation Bug in Third-Party Package | Resolved |
 | 2026-07-05 | P1 High | credential_guard.sh Hardening, Round 2 — Two New Exposure Vectors Found and Closed | Resolved |
 | 2026-07-10 | P2 Medium | Hermes Update No-Ops on Populated Named Volume | Diagnosed — Remediation Planned |
+| 2026-07-12 | P2 Medium | Named Volume Masked the Image: Two Months of No-Op GitOps Deploys | Resolved |
+| 2026-07-12 | P1 High | Credential Guard Enforced Text, Not Behaviour | Resolved |
+| 2026-07-23 | P1 High | Six Controls That Reported Healthy: Instance-Scoped Verification Across a Container Stack | Resolved |
 
 ## Methodology
 Infrastructure is treated as code. Changes are documented, tested, and reviewed before application. AI-assisted tooling (Hermes + Claude Code) is used for complex multi-system operations with human approval at each step.
