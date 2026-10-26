@@ -134,7 +134,7 @@ for PREFIX in hermes_ hermes_root_scripts_; do
 - **Allowlist instead of blanket tolerance.** Known, intentional gaps live in one commented list in the script. Anything outside it surfaces as a non-fatal warning.
 - **Format-drift safety net.** If a future CLI changes the log format, the script warns rather than going quiet.
 - **Open follow-ups:**
-  - Confirm the scheduled run on 2026-11-01 06:10 is silent and adds a fourth zip, with the oldest one rotated out.
+  - Confirm the scheduled run on 2026-11-01 06:10 is silent, and that the share still holds three zips (10-18 rotated out).
   - Expect the Ollama truncation alert once more on 10-31; it should clear on 11-07. If it still fires on 11-07, treat it as real.
 
 ---
